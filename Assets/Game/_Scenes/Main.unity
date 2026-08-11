@@ -14624,6 +14624,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667010155}
   m_Mesh: {fileID: 4300384, guid: 9a20b9dd34e6b4140a8c92991d94c731, type: 3}
+--- !u!95 &671792462 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95483830545951576, guid: 49be4103b035b448cb277ad3ac4b48f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1842215355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &671835836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27039,6 +27045,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -105636207504533824, guid: 1bb8586e5abc73f4291bf0b513b72cc9, type: 2}
     value: {fileID: 2043896032}
+  - key: {fileID: -7314177988300751707, guid: 1bb8586e5abc73f4291bf0b513b72cc9, type: 2}
+    value: {fileID: 671792462}
   m_ExposedReferences:
     m_References:
     - 056b22886db56f343b3a3018ebc62438: {fileID: 1742519357}
@@ -40304,7 +40312,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.03881481, y: -0.8434345, z: 0.15165721, w: 0.24399492}
+  m_LocalRotation: {x: 0.03849768, y: -0.83654344, z: 0.1504181, w: -0.5256962}
   m_LocalPosition: {x: 1.98, y: 2.13, z: -105.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
