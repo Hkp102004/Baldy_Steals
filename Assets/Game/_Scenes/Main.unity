@@ -24986,6 +24986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1293911963}
   - component: {fileID: 1293911962}
+  - component: {fileID: 1293911964}
   m_Layer: 0
   m_Name: CM Over the Shoulder shot
   m_TagString: Untagged
@@ -25035,7 +25036,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293911961}
-  m_LocalRotation: {x: -0.089640364, y: -0.8338964, z: 0.14221412, w: -0.5256962}
+  m_LocalRotation: {x: -0.08964037, y: -0.83389646, z: 0.14221412, w: -0.5256962}
   m_LocalPosition: {x: -4.756115, y: 2.498041, z: -106.40974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25043,6 +25044,25 @@ Transform:
   m_Father: {fileID: 999372982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1293911964
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293911961}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1303733393
 GameObject:
   m_ObjectHideFlags: 0
@@ -27047,6 +27067,8 @@ PlayableDirector:
     value: {fileID: 2043896032}
   - key: {fileID: -7314177988300751707, guid: 1bb8586e5abc73f4291bf0b513b72cc9, type: 2}
     value: {fileID: 671792462}
+  - key: {fileID: 9179200578894768744, guid: 1bb8586e5abc73f4291bf0b513b72cc9, type: 2}
+    value: {fileID: 1293911964}
   m_ExposedReferences:
     m_References:
     - 056b22886db56f343b3a3018ebc62438: {fileID: 1742519357}
@@ -40312,7 +40334,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.03849768, y: -0.83654344, z: 0.1504181, w: -0.5256962}
+  m_LocalRotation: {x: 0.038492497, y: -0.83643085, z: 0.15039787, w: 0.5256962}
   m_LocalPosition: {x: 1.98, y: 2.13, z: -105.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
