@@ -1558,6 +1558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112632833}
+  - component: {fileID: 112632834}
   m_Layer: 0
   m_Name: Game over cutscene
   m_TagString: Untagged
@@ -1577,11 +1578,29 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442158871}
-  - {fileID: 865963557}
-  - {fileID: 308954946}
+  - {fileID: 1059359131}
   m_Father: {fileID: 140034331}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &112632834
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112632832}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 7361c445ce09a024c8e5c19fe3ccef35, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -10383707139570866, guid: 7361c445ce09a024c8e5c19fe3ccef35, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &113185343
 GameObject:
   m_ObjectHideFlags: 0
@@ -9370,8 +9389,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1429540662}
-  m_Father: {fileID: 112632833}
-  m_RootOrder: 2
+  m_Father: {fileID: 1059359131}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 60.17, y: -53.558002, z: 0.002}
 --- !u!114 &308954947
 MonoBehaviour:
@@ -11401,7 +11420,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1212160502232198, guid: 0a4450f6e43e8194fa25563709d6c223, type: 3}
       propertyPath: m_Name
-      value: Captured_Cutscene
+      value: Actors
       objectReference: {fileID: 0}
     - target: {fileID: 4908424329327400, guid: 0a4450f6e43e8194fa25563709d6c223, type: 3}
       propertyPath: m_RootOrder
@@ -18887,8 +18906,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 779923362}
-  m_Father: {fileID: 112632833}
-  m_RootOrder: 1
+  m_Father: {fileID: 1059359131}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.82500005, y: -33.7, z: -0.001}
 --- !u!1001 &866651798
 PrefabInstance:
@@ -22131,6 +22150,38 @@ Transform:
   - {fileID: 802812599}
   m_Father: {fileID: 104077984}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059359130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059359131}
+  m_Layer: 0
+  m_Name: CM Virtual Cameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059359131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059359130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 865963557}
+  - {fileID: 308954946}
+  m_Father: {fileID: 112632833}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1060184567
 PrefabInstance:
