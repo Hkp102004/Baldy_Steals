@@ -1604,6 +1604,8 @@ PlayableDirector:
     value: {fileID: 2043896032}
   - key: {fileID: 4055432281518865376, guid: 7361c445ce09a024c8e5c19fe3ccef35, type: 2}
     value: {fileID: 865963558}
+  - key: {fileID: 4047584690420426599, guid: 7361c445ce09a024c8e5c19fe3ccef35, type: 2}
+    value: {fileID: 308954948}
   m_ExposedReferences:
     m_References:
     - ff17bfe0ef02f6049a232c407fda5b80: {fileID: 865963556}
@@ -9377,6 +9379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308954946}
   - component: {fileID: 308954947}
+  - component: {fileID: 308954948}
   m_Layer: 0
   m_Name: CM Aerial shot
   m_TagString: Untagged
@@ -9434,6 +9437,25 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1429540662}
+--- !u!95 &308954948
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308954945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &312653847
 GameObject:
   m_ObjectHideFlags: 0
@@ -41187,7 +41209,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: -0.006769912, y: -0.28479245, z: -0.0020504058, w: 0.7724781}
+  m_LocalRotation: {x: -0.011227216, y: -0.47229952, z: -0.0034003907, w: -0.77247804}
   m_LocalPosition: {x: -3.9485996, y: -1.8958521, z: -84.544014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
