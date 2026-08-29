@@ -33808,8 +33808,11 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 6943774996339991689, guid: 25309eb0ca65ef1488bfb10c344b59d8, type: 2}
     value: {fileID: 1182766933}
+  - key: {fileID: -8481863571282429955, guid: 25309eb0ca65ef1488bfb10c344b59d8, type: 2}
+    value: {fileID: 2043896032}
   m_ExposedReferences:
     m_References:
+    - e653c8960d81e814596496b0860b8415: {fileID: 1234036223}
     - 556a106f7e156af4aa8ed612daba59f3: {fileID: 1234036223}
 --- !u!1001 &1851979956
 PrefabInstance:
