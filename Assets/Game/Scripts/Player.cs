@@ -5,9 +5,14 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    NavMeshAgent agentboy;
     void Start()
     {
+        agentboy = GetComponent<NavMeshAgent>();
+        if(agentboy == null)
+        {
+            Debug.LogError("NavMeshAgent agentboy is not attacked to Player gameobj");
+        }
         
     }
 
@@ -24,12 +29,12 @@ public class Player : MonoBehaviour
             {
                 Debug.Log(hitinfo.point); // prints the point where the ray hits the object
 
-                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube;
+                // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube; //this was just to learn
 
-                cube.transform.position = hitinfo.point; //set the position of the cube to the point where the ray hit the object
+                // cube.transform.position = hitinfo.point; //set the position of the cube to the point where the ray hit the object
 
-                NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                agent.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
+                // agentboy.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
+                agentboy.SetDestination(hitinfo.point);
             }
         }
     }
