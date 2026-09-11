@@ -18692,7 +18692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionCamera: {fileID: 113185344}
-  mainCamera: {fileID: 0}
 --- !u!54 &725865536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19623,7 +19622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionCamera: {fileID: 241050945}
-  mainCamera: {fileID: 0}
 --- !u!54 &749122379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27786,7 +27784,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionCamera: {fileID: 959008484}
-  mainCamera: {fileID: 0}
 --- !u!1001 &1123531276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48107,7 +48104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionCamera: {fileID: 293455559}
-  mainCamera: {fileID: 0}
 --- !u!54 &1993299777
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48315,7 +48311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionCamera: {fileID: 1199145690}
-  mainCamera: {fileID: 0}
 --- !u!54 &1998284642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49212,6 +49207,7 @@ GameObject:
   - component: {fileID: 2043896030}
   - component: {fileID: 2043896035}
   - component: {fileID: 2043896032}
+  - component: {fileID: 2043896036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -49338,6 +49334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2043896036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043896029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8aeeedaa12cdf5428279990978c7576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1317376062}
 --- !u!1 &2045439348
 GameObject:
   m_ObjectHideFlags: 0
@@ -50158,7 +50167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionCamera: {fileID: 1341338661}
-  mainCamera: {fileID: 0}
 --- !u!54 &2077180763
 Rigidbody:
   m_ObjectHideFlags: 0
