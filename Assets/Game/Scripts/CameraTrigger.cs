@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class CameraTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Transform positionCamera; //the transform of the camera which position will set to main camera
+
     void Start()
     {
-        
+        if(positionCamera == null)
+        {
+            Debug.LogError("Position camera is missing in " + gameObject.name);
+            return;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("Player passed one of the triggers");
+            Camera.main.transform.position = positionCamera.transform.position;
+            Camera.main.transform.rotation = positionCamera.transform.rotation;
         }
 
     }
