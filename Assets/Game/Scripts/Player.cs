@@ -5,15 +5,16 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    private NavMeshAgent agentboy;
+    private NavMeshAgent agentboy; //to access the navmesh agent
     void Start()
     {
         agentboy = GetComponent<NavMeshAgent>();
+
         if(agentboy == null)
         {
-            Debug.LogError("NavMeshAgent agentboy is not attacked to Player gameobj");
+            Debug.LogError("NavMeshAgent is missing in player gameobj");
+            return;
         }
-        
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
                 // cube.transform.position = hitinfo.point; //set the position of the cube to the point where the ray hit the object
 
                 // agentboy.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
-                agentboy.SetDestination(hitinfo.point);
+                agentboy.SetDestination(hitinfo.point); // to move the player to the point where the ray hits the object
             }
         }
     }
