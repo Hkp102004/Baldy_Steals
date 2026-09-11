@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Player : MonoBehaviour
 {
     private NavMeshAgent agentboy; //to access the navmesh agent
+    private Vector3 destination; //to store the destination of the player yk
     [SerializeField] private Animator animator;
 
     void Start()
@@ -43,10 +44,18 @@ public class Player : MonoBehaviour
                 // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube; //this was just to learn
 
                 // cube.transform.position = hitinfo.point; //set the position of the cube to the point where the ray hit the object
+                destination = hitinfo.point;
 
                 // agentboy.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
                 agentboy.SetDestination(hitinfo.point); // to move the player to the point where the ray hits the object
             }
+        }
+
+        float distance = Vector3.Distance(transform.position, destination); //ts will calculate the distance bw player & destination
+
+        if(distance < 1.0f)
+        {
+            animator.SetBool("walk", false); 
         }
     }
 }
