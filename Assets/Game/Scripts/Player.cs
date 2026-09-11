@@ -6,13 +6,22 @@ using UnityEngine.AI;
 public class Player : MonoBehaviour
 {
     private NavMeshAgent agentboy; //to access the navmesh agent
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         agentboy = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
 
         if(agentboy == null)
         {
             Debug.LogError("NavMeshAgent is missing in player gameobj");
+            return;
+        }
+
+        if(animator == null)
+        {
+            Debug.LogError("Animator component is missing in player gameobj");
             return;
         }
     }
@@ -29,6 +38,7 @@ public class Player : MonoBehaviour
             if(Physics.Raycast(rayOrigin, out hitinfo)) // if the ray hits an object
             {
                 Debug.Log(hitinfo.point); // prints the point where the ray hits the object
+                animator.SetBool("walk", true); //set the walking animation to true when the player is moving
 
                 // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube; //this was just to learn
 
