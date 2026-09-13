@@ -32,24 +32,25 @@ public class GuardAI : MonoBehaviour
 
             if(distance < 1.0f)
             {
-                if(reverse == false)
-                {
-                    currentIndex++;
-                }
-                else if(reverse == true)
+                if(reverse)
                 {
                     currentIndex--;
-                }
 
-                if(currentIndex >= waypoints.Count)
-                {
-                    reverse = true;
-                    currentIndex--;
+                    if(currentIndex < 0)
+                    {
+                        reverse = false;
+                        currentIndex++;
+                    }
                 }
-                if(currentIndex < 0)
+                else
                 {
-                    reverse = false;
                     currentIndex++;
+
+                    if(currentIndex >= waypoints.Count)
+                    {
+                        reverse = true;
+                        currentIndex--;
+                    }
                 }
             }
         }
