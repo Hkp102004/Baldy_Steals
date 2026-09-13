@@ -7,46 +7,49 @@ public class GuardAI : MonoBehaviour
 {
 
     [SerializeField] private List<Transform> waypoints;
-    [SerializeField] private Transform destination;
     [SerializeField] private NavMeshAgent agentboyG; //agentboy for Guard
+    [SerializeField] private int currentIndex = 0;
+    [SerializeField] private bool reverse = false;
     // Start is called before the first frame update
     void Start()
     {
         agentboyG = GetComponent<NavMeshAgent>();
 
-        if(waypoints.Count > 0) //check if first char exists
-        {
-            if(waypoints[0] != null) //check if the first element is not null
-            {
-                destination = waypoints[0];
-                agentboyG.SetDestination(destination.position);
-            }
-        }
-
         if(agentboyG == null)
         {
-            Debug.LogError("NavMeshAgent is missing in Guard boy");
+            Debug.LogError("NavMeshAgent is misssing in guardAI Script");
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(destination != null)
+        if( waypoints.Count >0 && waypoints[currentIndex] != null)
         {
-            float distance = Vector3.Distance(transform.position, destination.position);
+            agentboyG.SetDestination(waypoints[currentIndex].position);
+
+            float distance = Vector3.Distance(transform.position, waypoints[currentIndex].position);
 
             if(distance < 1.0f)
             {
-                if(waypoints[1] != null && destination != waypoints[1])
+                if(reverse == false)
                 {
-                    destination = waypoints[1];
-                    agentboyG.SetDestination(destination.position);
+                    currentIndex++;
                 }
-                else if(waypoints[2] != null)
+                else if(reverse == true)
                 {
-                    destination = waypoints[2];
-                    agentboyG.SetDestination(destination.position);
+                    currentIndex--;
+                }
+
+                if(currentIndex >= waypoints.Count)
+                {
+                    reverse = true;
+                    currentIndex--;
+                }
+                if(currentIndex < 0)
+                {
+                    reverse = false;
+                    currentIndex++;
                 }
             }
         }
