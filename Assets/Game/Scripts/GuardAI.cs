@@ -10,6 +10,9 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private NavMeshAgent agentboyG; //agentboy for Guard
     [SerializeField] private int currentIndex = 0;
     [SerializeField] private bool reverse = false;
+    [SerializeField] private bool reached = false;
+    [SerializeField] private float startIdle = 1f;
+    [SerializeField] private float endIdle = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,29 +33,41 @@ public class GuardAI : MonoBehaviour
 
             float distance = Vector3.Distance(transform.position, waypoints[currentIndex].position);
 
-            if(distance < 1.0f)
+            if(distance < 1.0f && !reached)
             {
-                if(reverse)
-                {
-                    currentIndex--;
 
-                    if(currentIndex < 0)
-                    {
-                        reverse = false;
-                        currentIndex++;
-                    }
-                }
-                else
-                {
-                    currentIndex++;
-
-                    if(currentIndex >= waypoints.Count)
-                    {
-                        reverse = true;
-                        currentIndex--;
-                    }
-                }
+                reached = true;
+                StartCoroutine(IdleSeconds(startIdle, endIdle));
             }
         }
+    }
+
+
+    IEnumerator IdleSeconds(float start, float end)
+    {
+        Debug.Log("Wait starts now");
+        float randomTime = Random.Range(start, end);
+        yield return new WaitForSeconds(randomTime);
+
+        if(reverse)
+        {
+            currentIndex--;
+            if(currentIndex <0)
+            {
+                reverse = false;
+                currentIndex++;
+            }
+        }
+        else
+        {
+            currentIndex++;
+            // currentIndex = Random.Range(0,3);  //experimantal code to make guard move randomly , so there will be no pattern recognition
+            if(currentIndex >= waypoints.Count)
+            {
+                reverse = true;
+                currentIndex--;
+            }
+        }
+        reached = false;
     }
 }
