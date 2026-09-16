@@ -13,14 +13,25 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private bool reached = false;
     [SerializeField] private float startIdle = 1f;
     [SerializeField] private float endIdle = 5f;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         agentboyG = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
         if(agentboyG == null)
         {
             Debug.LogError("NavMeshAgent is misssing in guardAI Script");
+        }
+        if(waypoints.Count == 0)
+        {
+            Debug.LogError("Waypoints are missing in guardAI Script");
+        }
+        if(animator == null)
+        {
+            Debug.LogError("Animator controller is missing in the "+ gameObject.name + " GameObject");
+            return;
         }
     }
 
@@ -47,6 +58,7 @@ public class GuardAI : MonoBehaviour
     {
         Debug.Log("Wait starts now");
         float randomTime = Random.Range(start, end);
+        animator.SetBool("walk", false); //to make the guard stop walking and play the idle animation
         yield return new WaitForSeconds(randomTime);
 
         if(reverse)
@@ -68,6 +80,7 @@ public class GuardAI : MonoBehaviour
                 currentIndex--;
             }
         }
+        animator.SetBool("walk", true); //to make the guard walk again after the idle animation is done
         reached = false;
     }
 }
