@@ -80,7 +80,12 @@ public class GuardAI : MonoBehaviour
                 currentIndex--;
             }
         }
-        animator.SetBool("walk", true); //to make the guard walk again after the idle animation is done
+        if(waypoints.Count > 1)
+        {
+            Debug.Log("Guard is moving to waypoint");
+            animator.SetBool("walk",true); //to make the guard walk and only the opes that have more positions than one
+        }
+        // animator.SetBool("walk", true); //to make the guard walk again after the idle animation is done
         reached = false;
     }
 }
