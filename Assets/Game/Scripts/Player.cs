@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
             if(Physics.Raycast(rayOrigin, out hitinfo)) // if the ray hits an object
             {
-                Debug.Log(hitinfo.point); // prints the point where the ray hits the object
+                // Debug.Log(hitinfo.point); // prints the point where the ray hits the object
                 animator.SetBool("walk", true); //set the walking animation to true when the player is moving
 
                 // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube; //this was just to learn

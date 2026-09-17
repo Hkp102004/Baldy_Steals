@@ -56,7 +56,7 @@ public class GuardAI : MonoBehaviour
 
     IEnumerator IdleSeconds(float start, float end)
     {
-        Debug.Log("Wait starts now");
+        // Debug.Log("Wait starts now");
         float randomTime = Random.Range(start, end);
         animator.SetBool("walk", false); //to make the guard stop walking and play the idle animation
         yield return new WaitForSeconds(randomTime);
@@ -82,7 +82,7 @@ public class GuardAI : MonoBehaviour
         }
         if(waypoints.Count > 1)
         {
-            Debug.Log("Guard is moving to waypoint");
+            // Debug.Log("Guard is moving to waypoint");
             animator.SetBool("walk",true); //to make the guard walk and only the opes that have more positions than one
         }
         // animator.SetBool("walk", true); //to make the guard walk again after the idle animation is done
