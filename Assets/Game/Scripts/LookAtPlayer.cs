@@ -8,7 +8,7 @@ public class LookAtPlayer : MonoBehaviour
     [SerializeField] private Transform target;
     void Start()
     {
-        
+        transform.Translate(1.06f,10.3f,6.12f); //initial position where the camera should be at the start of the game
     }
 
     // Update is called once per frame
