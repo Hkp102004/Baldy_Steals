@@ -5,10 +5,12 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private GameObject StartPosition;
     [SerializeField] private Transform target;
     void Start()
     {
-        transform.Translate(1.06f,10.3f,6.12f); //initial position where the camera should be at the start of the game
+        Camera.main.transform.position = StartPosition.transform.position;
+        Camera.main.transform.rotation = StartPosition.transform.rotation;
     }
 
     // Update is called once per frame
