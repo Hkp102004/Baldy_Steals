@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private Vector3 destination; //to store the destination of the player yk
     [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
+    private float coinDeleteCount = 10;
+    private float coinCount=2;
 
     void Start()
     {
@@ -67,7 +69,12 @@ public class Player : MonoBehaviour
             {
                 Vector3 location = hitinfo.point;
 
-                Instantiate(coin, location, Quaternion.identity);
+                if(coinCount > 0 )
+                {
+                    Instantiate(coin, location, Quaternion.identity);
+                    coinCount --;
+                    StartCoroutine(CoinCountDown(5));
+                }
             }
         }
 
@@ -78,4 +85,15 @@ public class Player : MonoBehaviour
             animator.SetBool("walk", false); 
         }
     }
+
+    IEnumerator CoinCountDown(int time) //cooldown time for coin spawning
+    {
+        if(coinCount < 2)
+        {
+            yield return new WaitForSeconds(time);
+            coinCount++;
+        }
+    }
+
+    
 }
