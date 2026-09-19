@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,7 @@ public class Player : MonoBehaviour
 {
     private NavMeshAgent agentboy; //to access the navmesh agent
     private Vector3 destination; //to store the destination of the player yk
+    [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
 
     void Start()
@@ -23,6 +25,11 @@ public class Player : MonoBehaviour
         if(animator == null)
         {
             Debug.LogError("Animator component is missing in player gameobj");
+            return;
+        }
+        if(coin == null)
+        {
+            Debug.LogError("coin gameobj is missing from player");
             return;
         }
     }
@@ -48,6 +55,19 @@ public class Player : MonoBehaviour
 
                 // agentboy.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
                 agentboy.SetDestination(hitinfo.point); // to move the player to the point where the ray hits the object
+            }
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitinfo;
+
+            if(Physics.Raycast(rayOrigin, out hitinfo))
+            {
+                Vector3 location = hitinfo.point;
+
+                Instantiate(coin, location, Quaternion.identity);
             }
         }
 
