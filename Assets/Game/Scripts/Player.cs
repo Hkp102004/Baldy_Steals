@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)) //for left mouse button
+        if(Input.GetMouseButtonDown(0)) //for left mouse button / movement of player
         {
             //to cast a ray from camera to mouse position
             Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButtonDown(1)) //coin distraction logic
+        if(Input.GetMouseButtonDown(1)) //coin distraction logic / right mouse button
         {
             Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitinfo;
@@ -87,14 +87,14 @@ public class Player : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, destination); //ts will calculate the distance bw player & destination
 
-        if(distance < 1.0f)
+        if(distance < 1.0f) // for stopping animation when player reaches target
         {
             animator.SetBool("walk", false); 
         }
     }
 
 
-    void SecurityDistaction(Vector3 position) //coin distraction function
+    void SecurityDistaction(Vector3 position) //coin distraction function to contact with GuardAI
     {
         if(position != null)
         {

@@ -47,7 +47,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( waypoints.Count >0 && waypoints[currentIndex] != null & !distracted)
+        if( waypoints.Count >0 && waypoints[currentIndex] != null & !distracted) //for normal following of code
         {
             agentboyG.SetDestination(waypoints[currentIndex].position);
 
@@ -83,13 +83,6 @@ public class GuardAI : MonoBehaviour
             agentboyG.SetDestination(coinPoint);
             animator.SetBool("walk",true);
             distractionPoint = coinPoint;
-            
-            // if(distance < 0.5f && !reached)
-            // {
-            //     reached = true;
-            //     StartCoroutine(IdleSeconds(startIdle,endIdle));
-            //     distracted = false;
-            // }
         }
     }
 
@@ -104,40 +97,56 @@ public class GuardAI : MonoBehaviour
     }
 
 
-    IEnumerator IdleSeconds(float start, float end)
+    IEnumerator IdleSeconds(float start, float end) //normal idle shi
     {
-        // Debug.Log("Wait starts now");
         float randomTime = Random.Range(start, end);
         animator.SetBool("walk", false); //to make the guard stop walking and play the idle animation
         yield return new WaitForSeconds(randomTime);
 
-        // if(reverse)
-        // {
-        //     currentIndex--;
-        //     if(currentIndex <0)
-        //     {
-        //         reverse = false;
-        //         currentIndex++;
-        //     }
-        // }
-        // else
-        // {
-        //     currentIndex++;
-        //     currentIndex = Random.Range(0,waypoints.Count);  //experimantal code to make guard move randomly , so there will be no pattern recognition
-        //     if(currentIndex >= waypoints.Count)
-        //     {
-        //         reverse = true;
-        //         currentIndex--;
-        //     }
-        // }
         currentIndex = Random.Range(0,waypoints.Count); //this should make the guards move randomly
         if(waypoints.Count > 1)
         {
-            // Debug.Log("Guard is moving to waypoint");
             animator.SetBool("walk",true); //to make the guard walk and only the opes that have more positions than one
         }
-        // animator.SetBool("walk", true); //to make the guard walk again after the idle animation is done
         reached = false;
     }
+
+
+
+    // IEnumerator IdleSeconds(float start, float end)
+    // {
+    //     // Debug.Log("Wait starts now");
+    //     float randomTime = Random.Range(start, end);
+    //     animator.SetBool("walk", false); //to make the guard stop walking and play the idle animation
+    //     yield return new WaitForSeconds(randomTime);
+
+    //     // if(reverse)
+    //     // {
+    //     //     currentIndex--;
+    //     //     if(currentIndex <0)
+    //     //     {
+    //     //         reverse = false;
+    //     //         currentIndex++;
+    //     //     }
+    //     // }
+    //     // else
+    //     // {
+    //     //     currentIndex++;
+    //     //     currentIndex = Random.Range(0,waypoints.Count);  //experimantal code to make guard move randomly , so there will be no pattern recognition
+    //     //     if(currentIndex >= waypoints.Count)
+    //     //     {
+    //     //         reverse = true;
+    //     //         currentIndex--;
+    //     //     }
+    //     // }
+    //     currentIndex = Random.Range(0,waypoints.Count); //this should make the guards move randomly
+    //     if(waypoints.Count > 1)
+    //     {
+    //         // Debug.Log("Guard is moving to waypoint");
+    //         animator.SetBool("walk",true); //to make the guard walk and only the opes that have more positions than one
+    //     }
+    //     // animator.SetBool("walk", true); //to make the guard walk again after the idle animation is done
+    //     reached = false;
+    // }
 }
 
