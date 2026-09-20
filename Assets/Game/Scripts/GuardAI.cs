@@ -13,7 +13,8 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private bool reached = false;
     [SerializeField] private float startIdle = 1f;
     [SerializeField] private float endIdle = 5f;
-    // [SerializeField] private bool distracted = false;
+    [SerializeField] private bool distracted = false;
+    private Vector3 distractionPoint;
     private Player player; //this is the playerScript
     private Animator animator;
     // Start is called before the first frame update
@@ -46,7 +47,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( waypoints.Count >0 && waypoints[currentIndex] != null)
+        if( waypoints.Count >0 && waypoints[currentIndex] != null & !distracted)
         {
             agentboyG.SetDestination(waypoints[currentIndex].position);
 
@@ -54,30 +55,53 @@ public class GuardAI : MonoBehaviour
 
             if(distance < 1.0f && !reached)
             {
-
                 reached = true;
                 StartCoroutine(IdleSeconds(startIdle, endIdle));
             }
         }
+
+        if(distracted) //code for distracted part in update
+        {
+            float distance = Vector3.Distance(transform.position,distractionPoint);
+            
+            if(distance <1.0f && !reached)
+            {
+                reached = true;
+                animator.SetBool("walk",false);
+                StartCoroutine(DistractedIdle(startIdle,endIdle));
+            }
+        }
     }
 
-    // public void Distraction( Vector3 coinPoint)
-    // {
-    //     distracted = true;
-    //     float distance = Vector3.Distance(transform.position, coinPoint); //this to calculate if it is not too far for the guard's range
+    public void Distraction( Vector3 coinPoint) //distracted function 
+    {
+        float distance = Vector3.Distance(transform.position, coinPoint); //this to calculate if it is not too far for the guard's range
 
-    //     if(distance < 6.0f)
-    //     {
-    //         agentboyG.SetDestination(coinPoint);
+        if(distance < 10.0f)
+        {
+            distracted = true;
+            agentboyG.SetDestination(coinPoint);
+            animator.SetBool("walk",true);
+            distractionPoint = coinPoint;
             
-    //         if(distance < 0.5f && !reached)
-    //         {
-    //             reached = true;
-    //             StartCoroutine(IdleSeconds(startIdle,endIdle));
-    //             distracted = false;
-    //         }
-    //     }
-    // }
+            // if(distance < 0.5f && !reached)
+            // {
+            //     reached = true;
+            //     StartCoroutine(IdleSeconds(startIdle,endIdle));
+            //     distracted = false;
+            // }
+        }
+    }
+
+    IEnumerator DistractedIdle(float start, float end) //distraction idle
+    {
+        animator.SetBool("walk",false);
+        float wait = Random.Range(start,end);
+        yield return new WaitForSeconds(wait);
+        distracted = false;
+        reached = false;
+        animator.SetBool("walk",true);
+    }
 
 
     IEnumerator IdleSeconds(float start, float end)
@@ -116,3 +140,4 @@ public class GuardAI : MonoBehaviour
         reached = false;
     }
 }
+

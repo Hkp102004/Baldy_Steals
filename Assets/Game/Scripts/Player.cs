@@ -11,14 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
     [SerializeField] private Transform CoinFolder;
-    private GuardAI guardScript; //this is the guard script
     private float coinCount=2;
 
     void Start()
     {
         agentboy = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        guardScript = GameObject.FindGameObjectWithTag("Guard1").GetComponent<GuardAI>();
 
         if(agentboy == null)
         {
@@ -39,11 +37,6 @@ public class Player : MonoBehaviour
         if(CoinFolder == null)
         {
             Debug.LogError("coin folder is missing in player Script");
-            return;
-        }
-        if(guardScript == null)
-        {
-            Debug.LogError("Player script was not able to fetch the guardAi script");
             return;
         }
     }
@@ -72,7 +65,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1)) //coin distraction logic
         {
             Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitinfo;
@@ -86,7 +79,7 @@ public class Player : MonoBehaviour
                     GameObject SpawnedCoin = Instantiate(coin, location, Quaternion.identity);
                     SpawnedCoin.transform.SetParent(CoinFolder);
                     coinCount --;
-                    // SecurityDistaction(location);
+                    SecurityDistaction(location);
                     StartCoroutine(CoinCountDown(5));
                 }
             }
@@ -101,13 +94,20 @@ public class Player : MonoBehaviour
     }
 
 
-    // void SecurityDistaction(Vector3 position)
-    // {
-    //     if(position != null)
-    //     {
-    //         guardScript.Distraction(position);
-    //     }
-    // }
+    void SecurityDistaction(Vector3 position) //coin distraction function
+    {
+        if(position != null)
+        {
+            // guardScript.Distraction(position);
+            GameObject[] Guards = GameObject.FindGameObjectsWithTag("Guard1");
+
+            foreach(var guard in Guards)
+            {
+                GuardAI guardScript = guard.GetComponent<GuardAI>();
+                guardScript.Distraction(position);
+            }
+        }
+    }
 
     IEnumerator CoinCountDown(int time) //cooldown time for coin spawning
     {

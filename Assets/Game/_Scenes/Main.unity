@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 56559621}
   m_Layer: 0
   m_Name: point3 Guard1
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8792,7 +8792,7 @@ GameObject:
   - component: {fileID: 225611138}
   m_Layer: 0
   m_Name: point 1 Guard 2
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8822,7 +8822,7 @@ GameObject:
   - component: {fileID: 227404769}
   m_Layer: 0
   m_Name: point 4 Guard 3
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9092,8 +9092,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999976, y: 0.9342137, z: 0.7102902}
-  m_Center: {x: 0, y: -0.032893155, z: -0.14485487}
+  m_Size: {x: 0.99999976, y: 0.9342137, z: 0.47397774}
+  m_Center: {x: 0, y: -0.032893155, z: -0.26301074}
 --- !u!23 &230509108
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13939,6 +13939,7 @@ MonoBehaviour:
   reached: 0
   startIdle: 3
   endIdle: 5
+  distracted: 0
 --- !u!195 &467288655
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -16137,8 +16138,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5616764, y: 0.9342137, z: 0.91256654}
-  m_Center: {x: -0.054786537, y: -0.032893155, z: -0.043716863}
+  m_Size: {x: 1.5616764, y: 0.9342137, z: 0.631082}
+  m_Center: {x: -0.05478654, y: -0.032893155, z: -0.18445931}
 --- !u!23 &574244603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22790,6 +22791,7 @@ MonoBehaviour:
   reached: 0
   startIdle: 3
   endIdle: 5
+  distracted: 0
 --- !u!195 &839610045
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -25142,6 +25144,7 @@ MonoBehaviour:
   reached: 0
   startIdle: 3
   endIdle: 5
+  distracted: 0
 --- !u!195 &934092047
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -25394,6 +25397,7 @@ MonoBehaviour:
   reached: 0
   startIdle: 1
   endIdle: 5
+  distracted: 0
 --- !u!195 &949834748
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -31339,8 +31343,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999964, y: 0.9342137, z: 0.91256654}
-  m_Center: {x: -8.3619685e-16, y: -0.032893155, z: -0.043716863}
+  m_Size: {x: 0.99999964, y: 0.9342137, z: 0.8095884}
+  m_Center: {x: 0.00000011519566, y: -0.032893155, z: 0.0077726007}
 --- !u!23 &1256778775
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33340,7 +33344,7 @@ GameObject:
   - component: {fileID: 1369214711}
   m_Layer: 0
   m_Name: point 1 Guard 3
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36799,7 +36803,7 @@ GameObject:
   - component: {fileID: 1559037831}
   m_Layer: 0
   m_Name: point1 Guard 4
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40082,8 +40086,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999964, y: 0.9342137, z: 0.91256654}
-  m_Center: {x: -8.3619685e-16, y: -0.032893155, z: -0.043716863}
+  m_Size: {x: 0.99999964, y: 0.9342137, z: 0.5013113}
+  m_Center: {x: 4.295494e-15, y: -0.032893155, z: -0.2493446}
 --- !u!23 &1754425368
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50581,7 +50585,7 @@ GameObject:
   - component: {fileID: 2020993919}
   m_Layer: 0
   m_Name: point 3 Guard 3
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52663,7 +52667,7 @@ GameObject:
   - component: {fileID: 2136486007}
   m_Layer: 0
   m_Name: point 2 Guard3
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52891,7 +52895,7 @@ GameObject:
   - component: {fileID: 4423840477707620}
   m_Layer: 0
   m_Name: point2 Guard 1
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52907,7 +52911,7 @@ GameObject:
   - component: {fileID: 4423841242013399}
   m_Layer: 0
   m_Name: point1 Guard 1
-  m_TagString: Guard1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
