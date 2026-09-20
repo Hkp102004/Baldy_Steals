@@ -11,12 +11,14 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
     [SerializeField] private Transform CoinFolder;
+    private GuardAI guardScript; //this is the guard script
     private float coinCount=2;
 
     void Start()
     {
         agentboy = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        guardScript = GameObject.FindGameObjectWithTag("Guard1").GetComponent<GuardAI>();
 
         if(agentboy == null)
         {
@@ -37,6 +39,11 @@ public class Player : MonoBehaviour
         if(CoinFolder == null)
         {
             Debug.LogError("coin folder is missing in player Script");
+            return;
+        }
+        if(guardScript == null)
+        {
+            Debug.LogError("Player script was not able to fetch the guardAi script");
             return;
         }
     }
@@ -72,13 +79,14 @@ public class Player : MonoBehaviour
 
             if(Physics.Raycast(rayOrigin, out hitinfo))
             {
-                Vector3 location = hitinfo.point;
+                Vector3 location = new Vector3(hitinfo.point.x, -1.8f , hitinfo.point.z);
 
                 if(coinCount > 0 )
                 {
                     GameObject SpawnedCoin = Instantiate(coin, location, Quaternion.identity);
                     SpawnedCoin.transform.SetParent(CoinFolder);
                     coinCount --;
+                    // SecurityDistaction(location);
                     StartCoroutine(CoinCountDown(5));
                 }
             }
@@ -91,6 +99,15 @@ public class Player : MonoBehaviour
             animator.SetBool("walk", false); 
         }
     }
+
+
+    // void SecurityDistaction(Vector3 position)
+    // {
+    //     if(position != null)
+    //     {
+    //         guardScript.Distraction(position);
+    //     }
+    // }
 
     IEnumerator CoinCountDown(int time) //cooldown time for coin spawning
     {

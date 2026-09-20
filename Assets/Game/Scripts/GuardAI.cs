@@ -9,16 +9,19 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private List<Transform> waypoints;
     [SerializeField] private NavMeshAgent agentboyG; //agentboy for Guard
     [SerializeField] private int currentIndex = 0;
-    [SerializeField] private bool reverse = false;
+    // [SerializeField] private bool reverse = false; //since we are going with random logic but I'll let it stay here for future
     [SerializeField] private bool reached = false;
     [SerializeField] private float startIdle = 1f;
     [SerializeField] private float endIdle = 5f;
+    // [SerializeField] private bool distracted = false;
+    private Player player; //this is the playerScript
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         agentboyG = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         if(agentboyG == null)
         {
@@ -31,6 +34,11 @@ public class GuardAI : MonoBehaviour
         if(animator == null)
         {
             Debug.LogError("Animator controller is missing in the "+ gameObject.name + " GameObject");
+            return;
+        }
+        if(player == null)
+        {
+            Debug.LogError("GuardAI script was not able to fetch Player script due to some reason");
             return;
         }
     }
@@ -53,6 +61,24 @@ public class GuardAI : MonoBehaviour
         }
     }
 
+    // public void Distraction( Vector3 coinPoint)
+    // {
+    //     distracted = true;
+    //     float distance = Vector3.Distance(transform.position, coinPoint); //this to calculate if it is not too far for the guard's range
+
+    //     if(distance < 6.0f)
+    //     {
+    //         agentboyG.SetDestination(coinPoint);
+            
+    //         if(distance < 0.5f && !reached)
+    //         {
+    //             reached = true;
+    //             StartCoroutine(IdleSeconds(startIdle,endIdle));
+    //             distracted = false;
+    //         }
+    //     }
+    // }
+
 
     IEnumerator IdleSeconds(float start, float end)
     {
@@ -61,25 +87,26 @@ public class GuardAI : MonoBehaviour
         animator.SetBool("walk", false); //to make the guard stop walking and play the idle animation
         yield return new WaitForSeconds(randomTime);
 
-        if(reverse)
-        {
-            currentIndex--;
-            if(currentIndex <0)
-            {
-                reverse = false;
-                currentIndex++;
-            }
-        }
-        else
-        {
-            currentIndex++;
-            // currentIndex = Random.Range(0,3);  //experimantal code to make guard move randomly , so there will be no pattern recognition
-            if(currentIndex >= waypoints.Count)
-            {
-                reverse = true;
-                currentIndex--;
-            }
-        }
+        // if(reverse)
+        // {
+        //     currentIndex--;
+        //     if(currentIndex <0)
+        //     {
+        //         reverse = false;
+        //         currentIndex++;
+        //     }
+        // }
+        // else
+        // {
+        //     currentIndex++;
+        //     currentIndex = Random.Range(0,waypoints.Count);  //experimantal code to make guard move randomly , so there will be no pattern recognition
+        //     if(currentIndex >= waypoints.Count)
+        //     {
+        //         reverse = true;
+        //         currentIndex--;
+        //     }
+        // }
+        currentIndex = Random.Range(0,waypoints.Count); //this should make the guards move randomly
         if(waypoints.Count > 1)
         {
             // Debug.Log("Guard is moving to waypoint");
