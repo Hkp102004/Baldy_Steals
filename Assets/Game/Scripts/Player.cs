@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private Vector3 destination; //to store the destination of the player yk
     [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
-    private float coinDeleteCount = 10;
     private float coinCount=2;
 
     void Start()
