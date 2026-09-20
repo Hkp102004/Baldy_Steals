@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Vector3 destination; //to store the destination of the player yk
     [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
+    [SerializeField] private Transform CoinFolder;
     private float coinCount=2;
 
     void Start()
@@ -31,6 +32,11 @@ public class Player : MonoBehaviour
         if(coin == null)
         {
             Debug.LogError("coin gameobj is missing from player");
+            return;
+        }
+        if(CoinFolder == null)
+        {
+            Debug.LogError("coin folder is missing in player Script");
             return;
         }
     }
@@ -70,7 +76,8 @@ public class Player : MonoBehaviour
 
                 if(coinCount > 0 )
                 {
-                    Instantiate(coin, location, Quaternion.identity);
+                    GameObject SpawnedCoin = Instantiate(coin, location, Quaternion.identity);
+                    SpawnedCoin.transform.SetParent(CoinFolder);
                     coinCount --;
                     StartCoroutine(CoinCountDown(5));
                 }
