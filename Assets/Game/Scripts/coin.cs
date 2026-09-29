@@ -5,7 +5,7 @@ using UnityEngine;
 public class coin : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private int time = 20; //initially after 20 secs the coin will dissapear
+    [SerializeField] private int time = 10; //initially after 20 secs the coin will dissapear
     void Start()
     {
         StartCoroutine(CoinDeletion(time));
@@ -15,6 +15,11 @@ public class coin : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DeleteYourself()
+    {
+        Destroy(gameObject);
     }
 
 

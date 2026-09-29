@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +15,8 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private float startIdle = 1f;
     [SerializeField] private float endIdle = 5f;
     [SerializeField] private bool distracted = false;
+    // private bool findCoin = false; //temp code
+    // public coin CoinScript; //temp code
     private Vector3 distractionPoint;
     private Player player; //this is the playerScript
     private Animator animator;
@@ -47,7 +50,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( waypoints.Count >0 && waypoints[currentIndex] != null & !distracted) //for normal following of code
+        if( waypoints.Count >0 && waypoints[currentIndex] != null && !distracted) //for normal following of code
         {
             agentboyG.SetDestination(waypoints[currentIndex].position);
 
@@ -64,13 +67,23 @@ public class GuardAI : MonoBehaviour
         {
             float distance = Vector3.Distance(transform.position,distractionPoint);
             
-            if(distance <1.0f && !reached)
+            if(distance <2.0f && !reached)
             {
                 reached = true;
                 animator.SetBool("walk",false);
+                // findCoin = true;
                 StartCoroutine(DistractedIdle(startIdle,endIdle));
             }
         }
+
+        // if(findCoin) //temp code
+        // {
+        //     if(CoinScript == null)
+        //     {
+        //         CoinScript = GameObject.FindGameObjectWithTag("Coin").GetComponent<coin>();
+        //         CoinScript.DeleteYourself(); 
+        //     }
+        // }
     }
 
     public void Distraction( Vector3 coinPoint) //distracted function 
@@ -88,12 +101,19 @@ public class GuardAI : MonoBehaviour
 
     IEnumerator DistractedIdle(float start, float end) //distraction idle
     {
+        // findCoin = true;  //temp code
+        // CoinScript.DeleteYourself(); //temo code
         animator.SetBool("walk",false);
         float wait = Random.Range(start,end);
         yield return new WaitForSeconds(wait);
         distracted = false;
         reached = false;
         animator.SetBool("walk",true);
+        // if(CoinScript != null)
+        // {
+        //     findCoin = false; //temp code
+        //     CoinScript = null; //temp code   
+        // }
     }
 
 

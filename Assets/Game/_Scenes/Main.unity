@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -13940,6 +13940,7 @@ MonoBehaviour:
   startIdle: 3
   endIdle: 5
   distracted: 0
+  CoinScript: {fileID: 0}
 --- !u!195 &467288655
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -22792,6 +22793,7 @@ MonoBehaviour:
   startIdle: 3
   endIdle: 5
   distracted: 0
+  CoinScript: {fileID: 0}
 --- !u!195 &839610045
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -25145,6 +25147,7 @@ MonoBehaviour:
   startIdle: 3
   endIdle: 5
   distracted: 0
+  CoinScript: {fileID: 0}
 --- !u!195 &934092047
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -25398,6 +25401,7 @@ MonoBehaviour:
   startIdle: 1
   endIdle: 5
   distracted: 0
+  CoinScript: {fileID: 0}
 --- !u!195 &949834748
 NavMeshAgent:
   m_ObjectHideFlags: 0

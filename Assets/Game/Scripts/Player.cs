@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject coin; //this is the coin that will be used to distract guards
     [SerializeField] private Animator animator;
     [SerializeField] private Transform CoinFolder;
+    [SerializeField] private float coinRange = 10;
     private float coinCount=2;
 
     void Start()
@@ -74,13 +75,19 @@ public class Player : MonoBehaviour
             {
                 Vector3 location = new Vector3(hitinfo.point.x, -1.8f , hitinfo.point.z);
 
-                if(coinCount > 0 )
+                float coinDistance = Vector3.Distance(transform.position , location);
+
+                if(coinDistance <= coinRange)  //to make sure the player can not throw coin too far
                 {
-                    GameObject SpawnedCoin = Instantiate(coin, location, Quaternion.identity);
-                    SpawnedCoin.transform.SetParent(CoinFolder);
-                    coinCount --;
-                    SecurityDistaction(location);
-                    StartCoroutine(CoinCountDown(5));
+                    if(coinCount > 0 )
+                    {
+                        animator.SetTrigger("throw");
+                        GameObject SpawnedCoin = Instantiate(coin, location, Quaternion.identity);
+                        SpawnedCoin.transform.SetParent(CoinFolder);
+                        coinCount --;
+                        SecurityDistaction(location);
+                        StartCoroutine(CoinCountDown(5));
+                    }
                 }
             }
         }
