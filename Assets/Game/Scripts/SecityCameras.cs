@@ -24,7 +24,7 @@ public class SecityCameras : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             GameOverScene.SetActive(true); //used to start the gameover scene
         }

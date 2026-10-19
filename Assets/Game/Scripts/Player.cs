@@ -54,27 +54,20 @@ public class Player : MonoBehaviour
 
             if(Physics.Raycast(rayOrigin, out hitinfo)) // if the ray hits an object
             {
+
+                // *****OLD CODES*****
                 // Debug.Log(hitinfo.point); // prints the point where the ray hits the object
                 // animator.SetBool("walk", true); //set the walking animation to true when the player is moving
-                
-                
-                //for now trying something new for animations
-
-                animator.SetTrigger("walking"); //using trigger method to switch bw animations instead
-
-
-
-
-
+                // animator.SetTrigger("walking"); //using trigger method to switch bw animations instead
                 // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube; //this was just to learn
-
                 // cube.transform.position = hitinfo.point; //set the position of the cube to the point where the ray hit the object
-                destination = hitinfo.point;
-
                 // agentboy.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
                 // agentboy.SetDestination(hitinfo.point); // to move the player to the point where the ray hits the object
 
                 //someting new and better I hope
+
+
+                destination = hitinfo.point;
 
                 if(agentboy.SetDestination(destination))
                 {
@@ -111,12 +104,9 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
-        // 
         
 
-        //maybe let's give it a try 
-
+        //maybe let's give it a try ***************NEW CODES*********
         if(isMoving && !agentboy.pathPending)
         {
             bool reachedDestination = agentboy.remainingDistance <= agentboy.stoppingDistance + 0.1f;

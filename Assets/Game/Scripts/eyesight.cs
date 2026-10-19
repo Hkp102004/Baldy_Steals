@@ -5,6 +5,7 @@ using UnityEngine;
 public class eyesight : MonoBehaviour
 {
     [SerializeField] private GameObject gameoverScene;
+    private bool testing = true; //purely for testing purpose
 
     void Start()
     {
@@ -19,7 +20,10 @@ public class eyesight : MonoBehaviour
         if(boom.gameObject.tag == "Player")
         {
             // Debug.Log("Player is in the guard's sight"); //think this should do
-            gameoverScene.SetActive(true);
+            if(!testing) //to test the other features for now
+            {
+                gameoverScene.SetActive(true);  
+            }
         }
     }
 }
