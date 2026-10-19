@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Transform CoinFolder;
     [SerializeField] private float coinRange = 10;
+    private bool isMoving = false;
     private float coinCount=2;
 
     void Start()
@@ -54,7 +55,16 @@ public class Player : MonoBehaviour
             if(Physics.Raycast(rayOrigin, out hitinfo)) // if the ray hits an object
             {
                 // Debug.Log(hitinfo.point); // prints the point where the ray hits the object
-                animator.SetBool("walk", true); //set the walking animation to true when the player is moving
+                // animator.SetBool("walk", true); //set the walking animation to true when the player is moving
+                
+                
+                //for now trying something new for animations
+
+                animator.SetTrigger("walking"); //using trigger method to switch bw animations instead
+
+
+
+
 
                 // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); //create a cube; //this was just to learn
 
@@ -62,7 +72,17 @@ public class Player : MonoBehaviour
                 destination = hitinfo.point;
 
                 // agentboy.destination = cube.transform.position; //set the destination of the agent to the where the ray hit the object and move the player to that position
-                agentboy.SetDestination(hitinfo.point); // to move the player to the point where the ray hits the object
+                // agentboy.SetDestination(hitinfo.point); // to move the player to the point where the ray hits the object
+
+                //someting new and better I hope
+
+                if(agentboy.SetDestination(destination))
+                {
+                    isMoving = true;
+
+                    animator.ResetTrigger("going idle");
+                    animator.SetTrigger("walking");
+                }
             }
         }
 
@@ -92,11 +112,23 @@ public class Player : MonoBehaviour
             }
         }
 
-        float distance = Vector3.Distance(transform.position, destination); //ts will calculate the distance bw player & destination
+        // 
+        
 
-        if(distance < 1.0f) // for stopping animation when player reaches target
+        //maybe let's give it a try 
+
+        if(isMoving && !agentboy.pathPending)
         {
-            animator.SetBool("walk", false); 
+            bool reachedDestination = agentboy.remainingDistance <= agentboy.stoppingDistance + 0.1f;
+
+            bool stopped = agentboy.velocity.sqrMagnitude < 0.01f;
+
+            if(reachedDestination && stopped)
+            {
+                isMoving = false;
+                animator.ResetTrigger("walking");
+                animator.SetTrigger("going idle");
+            }
         }
     }
 
