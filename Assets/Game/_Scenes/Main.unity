@@ -13764,7 +13764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1001 &439256549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18225,7 +18225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1 &635717664
 GameObject:
   m_ObjectHideFlags: 3
@@ -26650,7 +26650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1 &959008483
 GameObject:
   m_ObjectHideFlags: 0
@@ -26944,7 +26944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1001 &967893196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34563,7 +34563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1 &1369214710
 GameObject:
   m_ObjectHideFlags: 0
@@ -45157,7 +45157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1001 &1919072661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51689,7 +51689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1 &1998284636
 GameObject:
   m_ObjectHideFlags: 0
@@ -53138,7 +53138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c3b15ee6062864cbfb999ac2f0635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 112632832}
 --- !u!1001 &2061044159
 PrefabInstance:
   m_ObjectHideFlags: 0
