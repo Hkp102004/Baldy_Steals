@@ -15,11 +15,19 @@ public class SecityCameras : MonoBehaviour
         if(GameOverScene == null)
         {
             Debug.LogError("GameOver Cutscene is missing from SecurityCamera Script");
+            return;
         }
         if(Renderboy == null)
         {
-            Debug.LogError("Something is wrong, Render boy didn't do his work!!!!");
+            Debug.LogError("Something is wrong, Render girlie didn't work in "+ gameObject.name +"!!!!!");
+            return;
         }
+        if(Emergency_Light == null)
+        {
+            Debug.LogError("Emergy light is missing in "+ gameObject.name +".");
+            return;
+        }
+
 
         GameOverScene.SetActive(false);
     }
@@ -34,10 +42,7 @@ public class SecityCameras : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            if(Emergency_Light)
-            {
-                Renderboy.material = Emergency_Light; //not maybe , this actually works. yaay
-            }
+            Renderboy.material = Emergency_Light; //not maybe , this actually works. yaay
             GameOverScene.SetActive(true); //used to start the gameover scene
         }
     }
