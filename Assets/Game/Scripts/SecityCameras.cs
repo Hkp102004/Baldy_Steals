@@ -52,10 +52,16 @@ public class SecityCameras : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             animator.speed = 0; // to stop the animation or something likr that
+            Caught();
             Renderboy.material = Emergency_Light; //not maybe , this actually works. yaay
             GameOverScene.SetActive(true); //used to start the gameover scene
         }
     }
 
+
+    IEnumerator Caught()
+    {
+        yield return new WaitForSeconds(2f);
+    }
     
 }

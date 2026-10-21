@@ -13769,7 +13769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 1545448701}
 --- !u!54 &438701158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18249,7 +18249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 1577430596}
 --- !u!54 &630768782
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26697,7 +26697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 585229244}
 --- !u!54 &955397017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27010,7 +27010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 1940060763}
 --- !u!54 &967689738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45260,7 +45260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 436371675}
 --- !u!54 &1917304141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51811,7 +51811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 1822155497}
 --- !u!54 &1998103704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53279,7 +53279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
   Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
-  Camera: {fileID: 0}
+  Camera: {fileID: 774356142}
 --- !u!54 &2057996629
 Rigidbody:
   m_ObjectHideFlags: 0
