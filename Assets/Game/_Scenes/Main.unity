@@ -19614,6 +19614,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 63.12
       objectReference: {fileID: 0}
+    - target: {fileID: 23762052703765058, guid: 5597e4cd8f614e74393cb7dcb77ffc4f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 092de8c1418da4755ab99feb85e3c3e7, type: 2}
     - target: {fileID: 95806178109417866, guid: 5597e4cd8f614e74393cb7dcb77ffc4f,
         type: 3}
       propertyPath: m_Controller
@@ -34637,7 +34642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
-  Emergency_Light: {fileID: 0}
+  Emergency_Light: {fileID: 2100000, guid: 3de21d331c28d03409e9c440793cfaf8, type: 2}
 --- !u!54 &1367695509
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52957,7 +52962,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.31650138, y: -0.27572614, z: 0.15974271, w: -0.77247804}
+  m_LocalRotation: {x: 0.35420525, y: -0.30857256, z: 0.17877239, w: -0.86450106}
   m_LocalPosition: {x: 7.08, y: 15.370001, z: -78.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
