@@ -6,6 +6,7 @@ public class SecityCameras : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject GameOverScene; //gameover ctscne
+    [SerializeField] private Material Emergency_Light;
     void Start()
     {
         if(GameOverScene == null)

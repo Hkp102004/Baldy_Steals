@@ -2239,6 +2239,8 @@ PlayableDirector:
     value: {fileID: 543257871}
   - key: {fileID: -4500146484228318790, guid: 7361c445ce09a024c8e5c19fe3ccef35, type: 2}
     value: {fileID: 777768118}
+  - key: {fileID: -8167104803085721308, guid: 7361c445ce09a024c8e5c19fe3ccef35, type: 2}
+    value: {fileID: 1317376058}
   m_ExposedReferences:
     m_References:
     - ff17bfe0ef02f6049a232c407fda5b80: {fileID: 865963556}
@@ -13766,6 +13768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &438701158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18244,6 +18247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &630768782
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26685,6 +26689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &955397017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26996,6 +27001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &967689738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34631,6 +34637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &1367695509
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45242,6 +45249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &1917304141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51791,6 +51799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &1998103704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52948,8 +52957,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: -0.20740756, y: 0.24610768, z: -0.049335882, w: -0.94550467}
-  m_LocalPosition: {x: 9.963493, y: 12.631197, z: -4.136198}
+  m_LocalRotation: {x: 0.31650138, y: -0.27572614, z: 0.15974271, w: -0.77247804}
+  m_LocalPosition: {x: 7.08, y: 15.370001, z: -78.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53257,6 +53266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScene: {fileID: 112632832}
+  Emergency_Light: {fileID: 0}
 --- !u!54 &2057996629
 Rigidbody:
   m_ObjectHideFlags: 0
