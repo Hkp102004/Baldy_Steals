@@ -3774,7 +3774,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34559,7 +34558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1361990654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41203,7 +41202,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742519356}
-  m_LocalRotation: {x: -0.020474454, y: 0.9574507, z: -0.07021875, w: -0.27917448}
+  m_LocalRotation: {x: -0.04156955, y: 0.9483481, z: -0.1399815, w: -0.28162584}
   m_LocalPosition: {x: 1.766, y: 2.019, z: -106.858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46504,7 +46503,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -52969,8 +52967,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.35420525, y: -0.30857256, z: 0.17877239, w: -0.86450106}
-  m_LocalPosition: {x: 7.08, y: 15.370001, z: -78.53}
+  m_LocalRotation: {x: -0.08964037, y: -0.83389646, z: 0.14221412, w: -0.5256962}
+  m_LocalPosition: {x: -4.756115, y: 2.498041, z: -106.40974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53733,8 +53731,10 @@ GameObject:
   - component: {fileID: 2073984746}
   - component: {fileID: 2073984745}
   - component: {fileID: 2073984744}
+  - component: {fileID: 2073984747}
+  - component: {fileID: 2073984748}
   m_Layer: 0
-  m_Name: Grab_Cut_Scene_Zone
+  m_Name: sleeping guard boy trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53748,8 +53748,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073984742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.654617, y: -0.34460235, z: -107.536285}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: -5.68, y: 0.61, z: -109.3}
+  m_LocalScale: {x: 2.2, y: 5.97, z: 2.76}
   m_Children: []
   m_Father: {fileID: 287124544}
   m_RootOrder: 0
@@ -53801,7 +53801,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073984742}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.6767442, y: 0.99660206, z: 1.5074341}
@@ -53814,6 +53814,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073984742}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2073984747
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073984742}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2073984748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073984742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714b9e60a5858d94d9c1a0939a083a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StealingScene: {fileID: 1463569655}
 --- !u!1 &2076510566
 GameObject:
   m_ObjectHideFlags: 3

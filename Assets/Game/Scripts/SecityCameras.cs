@@ -10,6 +10,7 @@ public class SecityCameras : MonoBehaviour
     [SerializeField] private Material Emergency_Light;
     private MeshRenderer Renderboy; //this is the mesh renderer
     [SerializeField] private GameObject Camera;
+    private bool testing = true;  //only for testing      /////////////REmove it LATER//////////////
     private Animator animator;
     void Start()
     {
@@ -51,9 +52,12 @@ public class SecityCameras : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            animator.speed = 0; // to stop the animation or something likr that
-            Renderboy.material = Emergency_Light; //not maybe , this actually works. yaay
-            StartCoroutine(Caughtboy()); //gonna start coroutine
+            if(!testing)
+            {
+                animator.speed = 0; // to stop the animation or something likr that
+                Renderboy.material = Emergency_Light; //not maybe , this actually works. yaay
+                StartCoroutine(Caughtboy()); //gonna start coroutine
+            }
         }
     }
 
