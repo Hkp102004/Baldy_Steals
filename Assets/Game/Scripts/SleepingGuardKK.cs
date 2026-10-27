@@ -5,6 +5,7 @@ using UnityEngine;
 public class SleepingGuardKK : MonoBehaviour
 {
     [SerializeField] private GameObject StealingScene;
+    private int count = 0;
     void Start()
     {
         if(StealingScene == null)
@@ -26,7 +27,11 @@ public class SleepingGuardKK : MonoBehaviour
     {
         if(other.gameObject.tag=="Player")
         {
-            StealingScene.SetActive(true);
+            if(count==0)
+            {
+                StealingScene.SetActive(true);
+                count++;
+            }
         }
     }
 }
