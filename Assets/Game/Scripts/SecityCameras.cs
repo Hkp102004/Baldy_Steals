@@ -52,16 +52,18 @@ public class SecityCameras : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             animator.speed = 0; // to stop the animation or something likr that
-            Caught();
             Renderboy.material = Emergency_Light; //not maybe , this actually works. yaay
-            GameOverScene.SetActive(true); //used to start the gameover scene
+            StartCoroutine(Caughtboy()); //gonna start coroutine
         }
     }
 
 
-    IEnumerator Caught()
+    //new shi
+
+    IEnumerator Caughtboy()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2);
+        GameOverScene.SetActive(true); //gameover Cutscen
     }
     
 }
