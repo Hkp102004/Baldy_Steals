@@ -31,6 +31,7 @@ public class SleepingGuardKK : MonoBehaviour
             {
                 StealingScene.SetActive(true);
                 count++;
+                GameManager.KeyCardBaby = true;
             }
         }
     }
