@@ -39,6 +39,14 @@ public class SecityCameras : MonoBehaviour
         }
 
 
+        //testing shii
+        if(testing)
+        {
+            Debug.Log("You are running testing build, camera triggers are not wotking yet");
+            return;
+        }
+
+
         GameOverScene.SetActive(false);
     }
 
@@ -67,7 +75,6 @@ public class SecityCameras : MonoBehaviour
     IEnumerator Caughtboy()
     {
         yield return new WaitForSeconds(2);
-        GameOverScene.SetActive(true); //gameover Cutscen
+        GameOverScene.SetActive(true); //gameover Cutscene
     }
-    
 }

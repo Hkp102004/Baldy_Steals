@@ -14,6 +14,11 @@ public class eyesight : MonoBehaviour
             Debug.LogError("Game over cutscene is missing in the eyesight script, one of it ");
             return;
         }
+        if(testing)
+        {
+            Debug.Log("Testing mode for eyesights, make sure to turn it off");
+            return;
+        }
     }
     void OnTriggerEnter(Collider boom)
     {

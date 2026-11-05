@@ -17,7 +17,7 @@ public class WinCtsceneEnabled : MonoBehaviour
             }
             else
             {
-                Debug.LogError("You don't have the keycard yet boy or girl");
+                Debug.LogError("You don't have the keycard bruh, ts only for testing");
                 return;
             }
         }
