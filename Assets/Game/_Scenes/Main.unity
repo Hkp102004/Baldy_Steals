@@ -23030,6 +23030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCutscene: {fileID: 1775836287}
+  player: {fileID: 1317376058}
+  cameraPosition: {fileID: 580160662}
+  bgm: {fileID: 268657642}
 --- !u!4 &768789636
 Transform:
   m_ObjectHideFlags: 0
@@ -43128,8 +43131,8 @@ PlayableDirector:
     value: {fileID: 625421436}
   - key: {fileID: 5371406584872712714, guid: c483466cf6206dc4aa3a6a6b6ec6a308, type: 2}
     value: {fileID: 1317376058}
-  - key: {fileID: 8626850593467705379, guid: c483466cf6206dc4aa3a6a6b6ec6a308, type: 2}
-    value: {fileID: 268657645}
+  - key: {fileID: 3512779210210937416, guid: c483466cf6206dc4aa3a6a6b6ec6a308, type: 2}
+    value: {fileID: 268657642}
   m_ExposedReferences:
     m_References:
     - e27de1f43c6f419439ada577cdf64022: {fileID: 176130311}
@@ -54049,8 +54052,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.020580659, y: 0.97020864, z: -0.22362089, w: 0.09091423}
-  m_LocalPosition: {x: -5.9458094, y: 9.880821, z: 14.199997}
+  m_LocalRotation: {x: -0.011288064, y: 0.98236614, z: 0.061940476, w: 0.17604735}
+  m_LocalPosition: {x: -3.3999999, y: 8.23017, z: -127.51814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
