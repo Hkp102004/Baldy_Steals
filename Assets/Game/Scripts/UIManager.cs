@@ -23,4 +23,9 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }
