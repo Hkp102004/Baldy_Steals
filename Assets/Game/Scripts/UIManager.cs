@@ -26,6 +26,11 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main"); // to reload the scene 
+    }
+
+    public void Quit()
+    {
+        Application.Quit(); // to quit the game
     }
 }
