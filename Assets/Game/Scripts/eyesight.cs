@@ -5,7 +5,7 @@ using UnityEngine;
 public class eyesight : MonoBehaviour
 {
     [SerializeField] private GameObject gameoverScene;
-    private bool testing = true; //purely for testing purpose
+    private bool testing = false; //purely for testing purpose
 
     void Start()
     {
