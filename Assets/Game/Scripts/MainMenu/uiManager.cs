@@ -26,7 +26,7 @@ public class uiManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1); //used for loading the main game scane in game;
+        SceneManager.LoadScene("loadingScreen"); //used for loading the main game scane in game;
     }
 
     public void QuitGame()
